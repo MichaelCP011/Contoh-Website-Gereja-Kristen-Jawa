@@ -7,13 +7,7 @@ import {
   MapPin,
   Radio,
   Users,
-  Sparkles,
   ChevronRight,
-  Baby,
-  Flame,
-  HeartHandshake,
-  Check,
-  ExternalLink,
 } from "lucide-react";
 
 interface ScheduleItem {
@@ -36,104 +30,119 @@ interface ScheduleItem {
 
 export default function ScheduleBento() {
   const [activeTab, setActiveTab] = useState<"all" | "minggu" | "youth_kids" | "doa">("all");
-  const [copiedScheduleId, setCopiedScheduleId] = useState<string | null>(null);
 
   const schedules: ScheduleItem[] = [
     {
-      id: "ibadah-raya-1",
+      id: "ibadah-basa-jawi",
       category: "minggu",
-      title: "Ibadah Raya 1 (Umum & Lansia)",
-      day: "Setiap Hari Minggu",
-      time: "07:00 - 08:30 WIB",
-      location: "Main Sanctuary (Lantai 3)",
-      target: "Jemaat Dewasa, Lansia & Keluarga",
-      description: "Suasana ibadah khidmat dan teduh dengan nyanyian himne serta firman ekspositori. Tersedia penerjemahan langsung bahasa Mandarin.",
-      badge: "Onsite Sanctuary",
-      accent: "stone",
+      title: "Ibadah Basa Jawi (Kebaktian Bahasa Jawa)",
+      day: "Saben Dinten Minggu",
+      time: "06:30 - 08:00 WIB",
+      location: "Gedhong Ibadah Utama (Lantai 1)",
+      target: "Warga Sepuh (Adiyuswa), Kulawarga & Warga Pasamuwan",
+      description: "Kebaktian khidmat migunakaken Basa Jawi, Kidung Pasamuwan Jawi (KPJ) kairing gamelan karawitan rohani lan ungeling orgen.",
+      badge: "Basa Jawi & Gamelan",
+      accent: "amber",
       calendarTime: {
-        start: "20261025T070000",
-        end: "20261025T083000",
+        start: "20261025T063000",
+        end: "20261025T080000",
       },
     },
     {
-      id: "ibadah-raya-2",
+      id: "ibadah-basa-indonesia-1",
       category: "minggu",
-      title: "Ibadah Raya 2 (Keluarga & Utama)",
+      title: "Ibadah Basa Indonesia 1 (Utama & Keluarga)",
       day: "Setiap Hari Minggu",
-      time: "09:30 - 11:15 WIB",
-      location: "Main Sanctuary (Lantai 3)",
-      target: "Keluarga, Profesional Muda & Jemaat Umum",
-      description: "Ibadah pujian kontemporer penuh sukacita, khotbah tematik mendalam, disertai Sekolah Minggu Anak (Superbook Kids) serentak.",
+      time: "08:30 - 10:00 WIB",
+      location: "Gedhong Ibadah Utama (Lantai 1)",
+      target: "Keluarga, Dewasa & Jemaat Umum",
+      description: "Ibadah raya menggunakan Bahasa Indonesia, Kidung Jemaat (KJ) dan Nyanyikanlah Kidung Baru (NKB). Berbarengan dengan Sekolah Minggu Anak.",
       badge: "Onsite & Live Streaming",
       hasLivestream: true,
       accent: "amber",
       calendarTime: {
-        start: "20261025T093000",
-        end: "20261025T111500",
+        start: "20261025T083000",
+        end: "20261025T100000",
       },
     },
     {
-      id: "ibadah-raya-3",
+      id: "ibadah-basa-indonesia-2",
       category: "minggu",
-      title: "Ibadah Raya 3 (Bilingual / English)",
+      title: "Ibadah Basa Indonesia 2 (Sore)",
       day: "Setiap Hari Minggu",
-      time: "16:30 - 18:00 WIB",
-      location: "Main Sanctuary (Lantai 3)",
-      target: "Mahasiswa, Profesional & Jemaat Internasional",
-      description: "Contemporary English & Indonesian service with modern acoustic worship, biblical preaching, and post-service coffee fellowship.",
-      badge: "Bilingual Service",
+      time: "17:00 - 18:30 WIB",
+      location: "Gedhong Ibadah Utama (Lantai 1)",
+      target: "Profesional Muda, Mahasiswa & Jemaat Sore",
+      description: "Suasana ibadah teduh sore hari dengan pujian kontemporer akustik dan khotbah eksposisi firman aplikatif bagi kehidupan kerja dan kampus.",
+      badge: "Ibadah Sore",
       accent: "stone",
       calendarTime: {
-        start: "20261025T163000",
-        end: "20261025T180000",
+        start: "20261025T170000",
+        end: "20261025T183000",
       },
     },
     {
-      id: "superbook-kids",
+      id: "komisi-anak-sekolah-minggu",
       category: "youth_kids",
-      title: "Superbook Kids Church (Sekolah Minggu)",
+      title: "Sekolah Minggu (Komisi Anak GKJ)",
       day: "Setiap Hari Minggu",
-      time: "09:30 - 11:15 WIB",
-      location: "Kids Center (Lantai 1)",
+      time: "08:30 - 10:00 WIB",
+      location: "Gedung Grha Kasih / Ruang Komisi Anak",
       target: "Anak Balita, Pratama (Kelas 1-3) & Madya (Kelas 4-6)",
-      description: "Kurikulum interaktif Alkitab bergambar, animasi Superbook, kelas usia ber-AC, dan guru sekolah minggu berdedikasi tinggi.",
-      badge: "Ramah Anak & Terjaga",
+      description: "Pembinaan iman anak dengan nyanyian rohani, kisah tokoh Alkitab, prakarya, dan pendampingan Guru Sekolah Minggu (GSM) GKJ berdedikasi.",
+      badge: "Komisi Anak (KA)",
       accent: "emerald",
       calendarTime: {
-        start: "20261025T093000",
-        end: "20261025T111500",
+        start: "20261025T083000",
+        end: "20261025T100000",
       },
     },
     {
-      id: "ignite-youth",
+      id: "komisi-pemuda-remaja",
       category: "youth_kids",
-      title: "Ignite Youth & Teen Service",
-      day: "Setiap Hari Sabtu Sore",
-      time: "17:00 - 19:00 WIB",
-      location: "Youth Chapel (Lantai 2)",
-      target: "Remaja SMP, SMA & Mahasiswa Kampus",
-      description: "Worship energik, khotbah relevan pergumulan masa muda, kelompok tumbuh bersama, dan games seru.",
-      badge: "Generasi Muda",
+      title: "Ibadah Pemuda & Remaja (KP / KR GKJ)",
+      day: "Setiap Hari Sabtu",
+      time: "17:30 - 19:30 WIB",
+      location: "Ruang Pemuda (Lantai 2)",
+      target: "Remaja SMP-SMA, Mahasiswa & Pemuda GKJ",
+      description: "Wadah persekutuan dinamis generasi muda GKJ dengan worship band, diskusi isu aktual, sharing kelompok kecil, dan paseduluran hangat.",
+      badge: "Komisi Pemuda (KP)",
       accent: "amber",
       calendarTime: {
-        start: "20261024T170000",
-        end: "20261024T190000",
+        start: "20261024T173000",
+        end: "20261024T193000",
       },
     },
     {
-      id: "menara-doa",
+      id: "adiyuswa-doa",
       category: "doa",
-      title: "Menara Doa & Pemulihan (Midweek Prayer)",
-      day: "Setiap Hari Rabu Malam",
-      time: "19:00 - 20:30 WIB",
-      location: "Chapel Daud (Lantai 2) / Hybrid Zoom",
-      target: "Seluruh Jemaat & Siapa Saja yang Butuh Penguatan",
-      description: "Waktu teduh di tengah pekan untuk berdoa syafaat bagi bangsa, keluarga, kesembuhan orang sakit, dan pendalaman Alkitab ayat demi ayat.",
-      badge: "Doa & Syafaat",
+      title: "Persekutuan Warga Adiyuswa (Lansia GKJ)",
+      day: "Setiap Hari Selasa Sore",
+      time: "16:00 - 17:30 WIB",
+      location: "Pendopo Pasamuwan GKJ",
+      target: "Para Sesepuh Jemaat & Warga Senior (Adiyuswa)",
+      description: "Persekutuan guyub rukun tembang macapat rohani, kidung jemaat, saling menanyakan kabar (sambang-tinimbang), dan siraman rohani penguat usia senja.",
+      badge: "Guyub Warga Adiyuswa",
       accent: "stone",
       calendarTime: {
-        start: "20261028T190000",
-        end: "20261028T203000",
+        start: "20261027T160000",
+        end: "20261027T173000",
+      },
+    },
+    {
+      id: "menara-doa-gkj",
+      category: "doa",
+      title: "Persekutuan Doa & Pendalaman Alkitab (PA)",
+      day: "Setiap Hari Rabu Malam",
+      time: "18:30 - 20:00 WIB",
+      location: "Ruang Ibadah / Paguyuban Wilayah",
+      target: "Seluruh Warga Pasamuwan & Sahabat",
+      description: "Mendoakan pokok doa warga, pergumulan bangsa, jemaat yang sakit, serta bedah Alkitab sistematis bersama Pendeta dan Majelis GKJ.",
+      badge: "Doa & Pendalaman Alkitab",
+      accent: "stone",
+      calendarTime: {
+        start: "20261028T183000",
+        end: "20261028T200000",
       },
     },
   ];
@@ -144,11 +153,11 @@ export default function ScheduleBento() {
   });
 
   const generateGoogleCalendarUrl = (item: ScheduleItem) => {
-    const title = encodeURIComponent(`${item.title} - GKKA Indonesia`);
+    const title = encodeURIComponent(`${item.title} - GKJ Jawa Tengah`);
     const details = encodeURIComponent(
-      `${item.description}\n\nLokasi: ${item.location}\nAlamat: Gedung Gereja GKKA, Jl. Boulevard Kasih Harmoni No. 12-14, Jakarta Pusat.`
+      `${item.description}\n\nLokasi: ${item.location}\nAlamat: Gedung GKJ Manahan, Jl. MT Haryono No. 9, Manahan, Kota Surakarta, Jawa Tengah 57139.`
     );
-    const location = encodeURIComponent("GKKA Indonesia, Jl. Boulevard Kasih Harmoni No. 12-14, Jakarta Pusat");
+    const location = encodeURIComponent("GKJ Manahan, Jl. MT Haryono No. 9, Manahan, Kota Surakarta, Jawa Tengah 57139");
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${item.calendarTime.start}/${item.calendarTime.end}&details=${details}&location=${location}`;
   };
 
@@ -159,10 +168,10 @@ export default function ScheduleBento() {
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 text-xs font-semibold uppercase tracking-wider mb-3">
             <Clock className="w-3.5 h-3.5 text-amber-700" />
-            <span>Waktu Kebaktian & Doa</span>
+            <span>Wanci Pangibadah Pasamuwan</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900">
-            Jadwal Ibadah Rutin
+            Jadwal Kebaktian Rutin GKJ
           </h2>
         </div>
 
@@ -186,7 +195,7 @@ export default function ScheduleBento() {
                 : "text-stone-600 hover:text-stone-900"
             }`}
           >
-            Ibadah Minggu
+            Kebaktian Minggu
           </button>
           <button
             onClick={() => setActiveTab("youth_kids")}
@@ -196,7 +205,7 @@ export default function ScheduleBento() {
                 : "text-stone-600 hover:text-stone-900"
             }`}
           >
-            Youth & Kids
+            Komisi Pemuda & Anak
           </button>
           <button
             onClick={() => setActiveTab("doa")}
@@ -206,7 +215,7 @@ export default function ScheduleBento() {
                 : "text-stone-600 hover:text-stone-900"
             }`}
           >
-            Doa Tengah Pekan
+            Adiyuswa & Doa
           </button>
         </div>
       </div>
@@ -298,23 +307,23 @@ export default function ScheduleBento() {
       <div className="mt-10 p-6 sm:p-8 rounded-3xl bg-stone-900 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div>
           <div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">
-            Panduan Jemaat Baru & Tamu Pertama Kali
+            Panduan Warga rawuh enggal (Tamu Pertama Kali)
           </div>
           <h4 className="font-serif text-xl sm:text-2xl font-bold mb-2">
-            Pertama Kali Berkunjung ke GKKA?
+            Sepisanan Rawuh ing GKJ?
           </h4>
           <p className="text-stone-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
-            Tidak perlu khawatir atau merasa sungkan. Kenakan pakaian santai yang sopan dan rapi. 
-            Tim penyambut (Usher) kami akan menyapa di pintu masuk dan membantu Anda menemukan tempat duduk yang nyaman.
+            Mboten sah kuwatos, sedaya warga tansah nampi kanthi kebak kabingahan. 
+            Busana santai, rapi, lan sopan (utawi batik). Tim Penerima Tamu Majelis GKJ badhe mbiyantu Panjenengan manggihaken papan palungguhan ingkang kepenak.
           </p>
         </div>
         <a
-          href="https://wa.me/6281288997700?text=Halo%20GKKA,%20saya%20berencana%20hadir%20pertama%20kali%20pada%20ibadah%20minggu%20ini.%20Apakah%20bisa%20dibantu%20informasinya?"
+          href="https://wa.me/6281226001931?text=Sugeng%20rawuh%20GKJ,%20kula%20badhe%20ndherek%20ngibadah%20sepisanan%20minggu%20punika."
           target="_blank"
           rel="noopener noreferrer"
           className="shrink-0 px-5 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs tracking-wide transition-all shadow-sm"
         >
-          Konfirmasi Kunjungan Tamu
+          Konfirmasi Kehadiran Tamu
         </a>
       </div>
     </section>

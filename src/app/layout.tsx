@@ -15,22 +15,23 @@ const serifFont = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "GKKA Indonesia | Gereja Komunitas Kasih Anugerah",
+  title: "GKJ (Gereja Kristen Jawa) | Mengakar dalam Kristus, Berbuah Bagi Sesama",
   description:
-    "Gereja yang berakar dalam firman, bertumbuh dalam kasih Kristus, dan menghadirkan terang bagi kota. Jadwal ibadah, profil gereja, kegiatan komunitas sel, dan alamat lokasi.",
+    "Situs resmi GKJ (Gereja Kristen Jawa) - Wilayah Jawa Tengah. Jadwal kebaktian Basa Jawi & Indonesia, profil gereja, kegiatan komisi kategorial, paguyuban wilayah, dan informasi lokasi.",
   keywords: [
-    "gereja kristen",
-    "jadwal ibadah",
-    "GKKA",
-    "komunitas sel",
-    "profil gereja",
-    "kebaktian minggu",
-    "youth church",
+    "GKJ",
+    "Gereja Kristen Jawa",
+    "GKJ Jawa Tengah",
+    "GKJ Solo",
+    "GKJ Manahan",
+    "jadwal ibadah gkj",
+    "kebaktian basa jawi",
+    "sinode gkj",
   ],
   openGraph: {
-    title: "GKKA Indonesia | Gereja Komunitas Kasih Anugerah",
+    title: "GKJ (Gereja Kristen Jawa) | Mengakar dalam Kristus, Berbuah Bagi Sesama",
     description:
-      "Tempat bertumbuh dalam iman dan mengalami kasih Kristus yang nyata. Selamat datang di rumah Tuhan.",
+      "Ndherek Gusti Yesus ing satengahing bebrayan agung. Sugeng rawuh ing pasamuwan GKJ (Gereja Kristen Jawa).",
     type: "website",
     locale: "id_ID",
   },

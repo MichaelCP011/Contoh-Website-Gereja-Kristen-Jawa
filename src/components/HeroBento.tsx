@@ -12,10 +12,8 @@ import {
   Heart,
   ChevronRight,
   ShieldCheck,
-  Users,
-  Compass,
-  ArrowUpRight,
   Sparkles,
+  ArrowUpRight,
 } from "lucide-react";
 
 export default function HeroBento() {
@@ -27,26 +25,24 @@ export default function HeroBento() {
     seconds: 0,
   });
 
-  // Calculate next Sunday 09:30 WIB countdown
+  // Calculate next Sunday service countdown (Minggu 08:30 WIB)
   useEffect(() => {
     function calculateTimeUntilNextService() {
       const now = new Date();
-      // Target: Next Sunday at 09:30:00
       const target = new Date();
       const currentDay = now.getDay(); // 0 is Sunday
       let daysUntilSunday = (7 - currentDay) % 7;
-      
-      // If today is Sunday and it's already past 09:30, target next Sunday
+
       if (currentDay === 0) {
         const todayService = new Date(now);
-        todayService.setHours(9, 30, 0, 0);
+        todayService.setHours(8, 30, 0, 0);
         if (now > todayService) {
           daysUntilSunday = 7;
         }
       }
 
       target.setDate(now.getDate() + daysUntilSunday);
-      target.setHours(9, 30, 0, 0);
+      target.setHours(8, 30, 0, 0);
 
       const diff = target.getTime() - now.getTime();
       if (diff > 0) {
@@ -67,7 +63,7 @@ export default function HeroBento() {
 
   const copyScripture = () => {
     const text =
-      "\"Aku memberikan perintah baru kepada kamu, yaitu supaya kamu saling mengasihi; sama seperti Aku telah mengasihi kamu demikian pula kamu harus saling mengasihi. Dengan hal itu semua orang akan tahu, bahwa kamu adalah murid-murid-Ku, yaitu jikalau kamu saling mengasihi.\" — Yohanes 13:34-35";
+      "\"Mulané saiki tetep ana telung prakara iki: yaiku pracaya, pangarep-arep lan katresnan; lan kang pinunjul dhéwé yaiku katresnan.\" (Demikianlah tinggal ketiga hal ini, yaitu iman, pengharapan dan kasih, dan yang paling besar di antaranya ialah kasih.) — 1 Korintus 13:13";
     navigator.clipboard.writeText(text);
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
@@ -79,16 +75,16 @@ export default function HeroBento() {
       <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-900 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-            <span>Keluarga Allah di Tengah Kota</span>
+            <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+            <span>Pasamuwan GKJ • Jawa Tengah</span>
           </div>
           <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900 leading-tight">
-            Bertumbuh dalam Iman, <br className="hidden sm:inline" />
-            <span className="text-amber-800">Menyatakan Kasih</span> yang Nyata.
+            Ngrembaka ing Iman, <br className="hidden sm:inline" />
+            <span className="text-amber-800">Manunggal ing Katresnan</span> Gusti.
           </h1>
         </div>
         <p className="text-stone-600 text-sm sm:text-base max-w-md leading-relaxed">
-          Gereja yang berkomitmen menyajikan firman yang mendalam, pujian yang menyembah, serta komunitas hangat tempat setiap orang diterima apa adanya.
+          Gereja Kristen Jawa (GKJ) ngugemi piwulang Injil Kristus ing satengahing kabudayan Jawi lan bebrayan agung. Sugeng rawuh ing pasamuwan dalem Gusti.
         </p>
       </div>
 
@@ -97,39 +93,35 @@ export default function HeroBento() {
         
         {/* Bento 1: Flagship Hero Sanctuary (Spans 2 cols, 2 rows on desktop) */}
         <div className="bento-card lg:col-span-2 lg:row-span-2 min-h-[460px] md:min-h-[540px] flex flex-col justify-end p-6 sm:p-8 text-white relative group">
-          {/* Background Image with optimized Next.js Image */}
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/sanctuary.jpg"
-              alt="Gedung Ruang Ibadah Gereja GKKA"
+              alt="Gedung Ibadah GKJ Jawa Tengah"
               fill
               priority
               className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
             />
-            {/* Architectural gradient overlays */}
             <div className="absolute inset-0 bg-linear-to-t from-stone-950 via-stone-950/60 to-stone-950/20" />
             <div className="absolute inset-0 bg-stone-950/20 backdrop-brightness-95" />
           </div>
 
-          {/* Top Floating Badge inside Image Card */}
           <div className="relative z-10 mb-auto flex items-center justify-between">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-stone-900/80 backdrop-blur-md text-amber-300 border border-white/15 text-xs font-medium">
               <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
-              <span>Gereja Terbuka & Ramah Semua Generasi</span>
+              <span>Gereja Terbuka • Berakar dalam Tradisi Injili</span>
             </span>
             <span className="text-xs text-stone-300 font-mono hidden sm:inline-block bg-black/40 px-2.5 py-1 rounded-lg backdrop-blur-xs">
-              EST. 1998 • JAKARTA
+              JAWA TENGAH • SINODE GKJ
             </span>
           </div>
 
-          {/* Bottom Card Content */}
           <div className="relative z-10 space-y-4 pt-16">
             <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight">
-              Selamat Datang di Rumah Tuhan.
+              Sugeng Rawuh ing Pasamuwan GKJ.
             </h2>
             <p className="text-stone-200 text-sm sm:text-base leading-relaxed line-clamp-3 sm:line-clamp-none">
-              Kami menyambut Anda, keluarga Anda, dan sahabat Anda untuk beribadah bersama. 
-              Temukan kedamaian, penghiburan firman Tuhan, dan persahabatan sejati di tengah hiruk-pikuk kehidupan kota.
+              Kami menyambut Saudara dan keluarga dengan penuh sukacita. 
+              Mari bertumbuh bersama dalam kebaktian Basa Jawi maupun Basa Indonesia, mendalami firman Tuhan, dan memelihara paseduluran yang rukun.
             </p>
 
             <div className="pt-2 flex flex-wrap gap-3">
@@ -138,13 +130,13 @@ export default function HeroBento() {
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-amber-600 hover:bg-amber-500 text-stone-950 font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg"
               >
                 <Calendar className="w-4 h-4 text-stone-950" />
-                <span>Lihat 4 Sesi Ibadah</span>
+                <span>Jadwal Kebaktian Minggu</span>
               </a>
               <a
                 href="#profil"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-white/15 hover:bg-white/25 text-white backdrop-blur-md border border-white/20 font-semibold text-sm transition-all duration-200"
               >
-                <span>Mengenal Kami</span>
+                <span>Mengenal GKJ</span>
                 <ChevronRight className="w-4 h-4" />
               </a>
             </div>
@@ -160,27 +152,27 @@ export default function HeroBento() {
                   <Clock className="w-4 h-4" />
                 </span>
                 <span className="text-xs font-bold uppercase tracking-wider text-stone-500">
-                  Ibadah Raya Berikutnya
+                  Kebaktian Minggu Mendatang
                 </span>
               </div>
               <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-red-500/10 text-red-700 text-xs font-semibold border border-red-500/20">
                 <Radio className="w-3.5 h-3.5 text-red-600 animate-pulse" />
-                Live Broadcast
+                Live Streaming
               </span>
             </div>
 
             <h3 className="font-serif text-xl sm:text-2xl font-bold text-stone-900 mb-1">
-              Ibadah Raya 2: Minggu Pk 09:30 WIB
+              Ibadah Raya: Minggu Pk 08:30 WIB
             </h3>
             <p className="text-stone-600 text-xs sm:text-sm mb-4">
-              Tema Khotbah: <strong className="text-stone-800">“Berakar Teguh di Tengah Badai Hidup”</strong> (Pdt. Dr. Andreas Santoso)
+              Ibadah Basa Indonesia &middot; Tersedia Ibadah Basa Jawi Pk 06:30 WIB (Kidung Pasamuwan Jawi)
             </p>
 
             {/* Countdown Grid Units */}
             <div className="grid grid-cols-4 gap-2 sm:gap-3 py-2 mb-4">
               <div className="bg-stone-100/80 border border-stone-200/80 rounded-2xl p-2.5 sm:p-3 text-center">
                 <div className="text-xl sm:text-2xl font-bold font-mono text-stone-900">{timeLeft.days}</div>
-                <div className="text-[10px] uppercase tracking-wider text-stone-500 font-medium">Hari</div>
+                <div className="text-[10px] uppercase tracking-wider text-stone-500 font-medium">Dinten</div>
               </div>
               <div className="bg-stone-100/80 border border-stone-200/80 rounded-2xl p-2.5 sm:p-3 text-center">
                 <div className="text-xl sm:text-2xl font-bold font-mono text-stone-900">{timeLeft.hours}</div>
@@ -212,13 +204,13 @@ export default function HeroBento() {
               href="#jadwal"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs tracking-wide transition-colors"
             >
-              <span>Semua Jam Ibadah</span>
+              <span>Jadwal Basa Jawi & Indo</span>
               <ChevronRight className="w-3.5 h-3.5" />
             </a>
           </div>
         </div>
 
-        {/* Bento 3: Daily Scripture / Ayat Firman (1 Col) */}
+        {/* Bento 3: Ayat Renungan / Sabda Pangandika (1 Col) */}
         <div className="bento-card p-6 flex flex-col justify-between bg-white border border-stone-200/70">
           <div>
             <div className="flex items-center justify-between mb-3">
@@ -226,15 +218,15 @@ export default function HeroBento() {
                 <BookOpen className="w-4 h-4" />
               </span>
               <span className="text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-stone-100 text-stone-600">
-                Ayat Renungan
+                Sabda Pangandika
               </span>
             </div>
 
             <p className="font-serif italic text-stone-800 text-sm sm:text-base leading-relaxed mb-3">
-              &ldquo;Aku memberikan perintah baru kepada kamu, yaitu supaya kamu saling mengasihi; sama seperti Aku telah mengasihi kamu demikian pula kamu harus saling mengasihi.&rdquo;
+              &ldquo;Mulané saiki tetep ana telung prakara iki: yaiku pracaya, pangarep-arep lan katresnan; lan kang pinunjul dhéwé yaiku katresnan.&rdquo;
             </p>
             <div className="text-xs font-semibold text-amber-800 tracking-wide">
-              — Yohanes 13:34
+              — 1 Korintus 13:13 (Kitab Suci Basa Jawi)
             </div>
           </div>
 
@@ -255,11 +247,11 @@ export default function HeroBento() {
                 </>
               )}
             </button>
-            <span className="text-[11px] text-stone-600">Alkitab Terjemahan Baru</span>
+            <span className="text-[11px] text-stone-500">Lembaga Alkitab Indonesia</span>
           </div>
         </div>
 
-        {/* Bento 4: Pastoral Hotline / Doa 24 Jam (1 Col) */}
+        {/* Bento 4: Layanan Pastoral & Majelis GKJ (1 Col) */}
         <div className="bento-card p-6 flex flex-col justify-between bg-gradient-to-br from-stone-900 to-stone-950 text-white">
           <div>
             <div className="flex items-center justify-between mb-3">
@@ -268,26 +260,26 @@ export default function HeroBento() {
               </span>
               <span className="inline-flex items-center gap-1 text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
-                Siap Melayani
+                Majelis Siaga
               </span>
             </div>
 
             <h4 className="font-serif text-lg font-bold text-white mb-1.5">
-              Butuh Dukungan Doa?
+              Pelayanan Doa & Pastoral
             </h4>
             <p className="text-stone-300 text-xs sm:text-sm leading-relaxed mb-4">
-              Tim pendoa syafaat dan hamba Tuhan kami siap mendengarkan, mendoakan, dan menguatkan Anda dalam setiap pergumulan.
+              Pendeta Jemaat dan Majelis GKJ siap melayani perkunjungan warga, doa penguatan, serta pendampingan keluarga.
             </p>
           </div>
 
           <div className="pt-2">
             <a
-              href="https://wa.me/6281288997700?text=Halo%20Pastoral%20Care%20GKKA,%20saya%20rindu%20didukung%20dalam%20doa%20untuk%20perkara:"
+              href="https://wa.me/6281226001931?text=Sugeng%20rawuh%20Majelis%20GKJ,%20kula%20nyuwun%20panyengkuyung%20pandonga%20kagem:"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs tracking-wide transition-all shadow-sm"
             >
-              <span>WhatsApp Pastoral Care</span>
+              <span>WhatsApp Kantor GKJ</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
           </div>

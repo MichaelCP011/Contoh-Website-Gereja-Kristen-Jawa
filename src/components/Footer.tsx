@@ -1,6 +1,7 @@
 "use client";
 
-import { Church, Phone, Mail, MapPin, ArrowUp } from "lucide-react";
+import Image from "next/image";
+import { Phone, Mail, MapPin, ArrowUp } from "lucide-react";
 import { YoutubeIcon, InstagramIcon, FacebookIcon } from "./SocialIcons";
 
 export default function Footer() {
@@ -13,16 +14,22 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Apostles' Creed Citation Banner */}
         <div className="mb-12 p-6 rounded-3xl bg-stone-900 border border-stone-800 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-          <div className="flex items-center gap-3">
-            <span className="p-2.5 rounded-2xl bg-amber-500/10 text-amber-400 border border-amber-500/20 shrink-0">
-              <Church className="w-5 h-5" />
-            </span>
+          <div className="flex items-center gap-3.5">
+            <div className="relative w-12 h-12 rounded-2xl bg-white/10 border border-white/15 p-1 flex items-center justify-center shrink-0">
+              <Image
+                src="/images/gkj-logo.png"
+                alt="Logo Resmi Gereja-Gereja Kristen Jawa (GKJ)"
+                width={38}
+                height={38}
+                className="object-contain"
+              />
+            </div>
             <div>
               <div className="text-xs font-bold uppercase tracking-wider text-amber-400">
-                Pernyataan Iman Kami
+                Pangaken Pitados Rasuli & Pandom Pasamuwan
               </div>
               <p className="font-serif text-sm text-stone-200 italic mt-0.5">
-                &ldquo;Satu Tuhan, satu iman, satu baptisan, satu Allah dan Bapa dari semua.&rdquo; — Efesus 4:5-6
+                &ldquo;Gusti iku siji, pracaya iku siji, baptis iku siji, Gusti Allah lan Ramane kabeh iku siji.&rdquo; — Efesus 4:5-6 (Kitab Suci Basa Jawi)
               </p>
             </div>
           </div>
@@ -30,7 +37,7 @@ export default function Footer() {
             onClick={scrollToTop}
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 text-xs font-semibold transition-colors shrink-0"
           >
-            <span>Kembali ke Atas</span>
+            <span>Mumbul Manginggil (Ke Atas)</span>
             <ArrowUp className="w-3.5 h-3.5" />
           </button>
         </div>
@@ -39,22 +46,28 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Col 1: Identity */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-amber-600/20 text-amber-400 border border-amber-500/30 flex items-center justify-center font-bold">
-                <Church className="w-5 h-5" />
+            <div className="flex items-center gap-3">
+              <div className="relative w-10 h-10 rounded-xl bg-white p-1 flex items-center justify-center shrink-0">
+                <Image
+                  src="/images/gkj-logo.png"
+                  alt="Logo GKJ"
+                  width={32}
+                  height={32}
+                  className="object-contain"
+                />
               </div>
               <div>
                 <span className="font-serif text-lg font-bold text-white tracking-tight">
-                  GKKA INDONESIA
+                  GKJ (Gereja Kristen Jawa)
                 </span>
-                <p className="text-[10px] text-stone-400">
-                  Gereja Komunitas Kasih Anugerah
+                <p className="text-[10px] text-amber-400 font-medium">
+                  Sinode Gereja-Gereja Kristen Jawa
                 </p>
               </div>
             </div>
 
             <p className="text-xs text-stone-400 leading-relaxed">
-              Sebuah rumah rohani yang berakar dalam firman, bertumbuh dalam kasih Kristus, dan menghadirkan terang bagi transformasi masyarakat.
+              Pasamuwan Reformis kanthi tata gereja Presbiterial Sinodal ingkang ngrembaka ing satengahing kabudayan Jawa Tengah lan Ngayogyakarta.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
@@ -91,32 +104,32 @@ export default function Footer() {
           {/* Col 2: Navigation Links */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400 mb-4">
-              Jelajahi Gereja
+              Jelajahi Pasamuwan
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
               <li>
                 <a href="#profil" className="hover:text-white transition-colors">
-                  Visi & Misi Kami
+                  Visi & Misi Sinode GKJ
                 </a>
               </li>
               <li>
                 <a href="#profil" className="hover:text-white transition-colors">
-                  Sambutan Gembala Sidang
+                  Paweling Majelis Jemaat
                 </a>
               </li>
               <li>
                 <a href="#profil" className="hover:text-white transition-colors">
-                  5 Nilai Inti (G.R.A.C.E)
+                  Nilai Pasamuwan & Sejarah 1931
                 </a>
               </li>
               <li>
                 <a href="#profil" className="hover:text-white transition-colors">
-                  Fasilitas & Ramah Disabilitas
+                  Sarana Ramah Warga Adiyuswa
                 </a>
               </li>
               <li>
                 <a href="#jadwal" className="hover:text-white transition-colors">
-                  Panduan Jemaat Baru
+                  Panduan Warga Rawuh Enggal
                 </a>
               </li>
             </ul>
@@ -125,37 +138,37 @@ export default function Footer() {
           {/* Col 3: Pelayanan & Ibadah */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400 mb-4">
-              Ibadah & Komunitas
+              Pangibadah & Paguyuban
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
               <li>
                 <a href="#jadwal" className="hover:text-white transition-colors">
-                  Ibadah Raya 1 (Minggu 07:00 WIB)
+                  Ibadah Basa Jawi (Minggu 06:30 WIB)
                 </a>
               </li>
               <li>
                 <a href="#jadwal" className="hover:text-white transition-colors">
-                  Ibadah Raya 2 & Kids Church (09:30 WIB)
+                  Ibadah Basa Indonesia 1 (08:30 WIB)
                 </a>
               </li>
               <li>
                 <a href="#jadwal" className="hover:text-white transition-colors">
-                  Ibadah Raya 3 Bilingual (16:30 WIB)
+                  Ibadah Basa Indonesia 2 (17:00 WIB)
+                </a>
+              </li>
+              <li>
+                <a href="#jadwal" className="hover:text-white transition-colors">
+                  Komisi Anak / Sekolah Minggu GKJ
                 </a>
               </li>
               <li>
                 <a href="#kegiatan" className="hover:text-white transition-colors">
-                  Ignite Youth (Sabtu 17:00 WIB)
+                  Komisi Pemuda (KP GKJ)
                 </a>
               </li>
               <li>
                 <a href="#kegiatan" className="hover:text-white transition-colors">
-                  Komunitas Sel (CARE Cell)
-                </a>
-              </li>
-              <li>
-                <a href="#kegiatan" className="hover:text-white transition-colors">
-                  Aksi Sosial Kasih Peduli
+                  Karawitan & Macapat Rohani
                 </a>
               </li>
             </ul>
@@ -164,22 +177,22 @@ export default function Footer() {
           {/* Col 4: Kontak & Sekretariat */}
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400 mb-4">
-              Sekretariat Pusat
+              Kantor Sekretariat GKJ
             </h4>
             <div className="space-y-3 text-xs text-stone-400">
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <span>
-                  Jl. Boulevard Kasih Harmoni No. 12-14, Gambir, Jakarta Pusat 10120
+                  Jl. MT Haryono No. 9, Manahan, Banjarsari, Kota Surakarta, Jawa Tengah 57139
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>(021) 388-9900 / 0812-8899-7700</span>
+                <span>(0271) 714-889 / 0812-2600-1931</span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-amber-400 shrink-0" />
-                <span>sekretariat@gkkaindonesia.org</span>
+                <span>kantor@gkjmanahan.or.id</span>
               </div>
             </div>
           </div>
@@ -188,11 +201,11 @@ export default function Footer() {
         {/* Bottom Sub-footer */}
         <div className="pt-8 border-t border-stone-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
           <div>
-            © 2026 GKKA Indonesia (Gereja Komunitas Kasih Anugerah). Hak Cipta Dilindungi.
+            © 2026 GKJ (Gereja Kristen Jawa) - Jawa Tengah. Hak Cipta Dilindungi Undang-Undang.
           </div>
           <div className="flex items-center gap-4">
             <span className="text-[11px] text-stone-400">
-              Didesain dengan Prinsip Bento UI & Anti-Slop
+              Bento UI & Anti-Slop Design
             </span>
           </div>
         </div>
