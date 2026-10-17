@@ -13,19 +13,26 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+  overflow-x: hidden;
 }
 
-/* Bento Card styles adhering to bento-ui principles */
+/* Bento Card styles adhering to bento-ui principles with mobile responsiveness */
 .bento-card {
   background-color: #ffffff;
-  border-radius: 1.75rem; /* 28px consistent curved corner */
+  border-radius: 1.25rem; /* 20px on mobile */
   border: 1px solid rgba(28, 25, 23, 0.08);
-  box-shadow: 0 2px 12px rgba(28, 25, 23, 0.03), 0 1px 3px rgba(28, 25, 23, 0.02);
+  box-shadow: 0 2px 10px rgba(28, 25, 23, 0.03), 0 1px 3px rgba(28, 25, 23, 0.02);
   transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
               box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
               border-color 0.25s ease;
   position: relative;
   overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .bento-card {
+    border-radius: 1.75rem; /* 28px on tablet & desktop */
+  }
 }
 
 .bento-card:hover {
@@ -39,17 +46,26 @@ body {
   background-size: 20px 20px;
 }
 
+/* Utility to hide scrollbar while preserving touch scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 ::-webkit-scrollbar-track {
   background: #f1f0ec;
 }
 ::-webkit-scrollbar-thumb {
   background: #d6d3d1;
-  border-radius: 4px;
+  border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a29e;

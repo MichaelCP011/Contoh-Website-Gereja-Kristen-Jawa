@@ -162,24 +162,24 @@ export default function ScheduleBento() {
   };
 
   return (
-    <section id="jadwal" className="py-12 md:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="jadwal" className="py-8 sm:py-16 md:py-20 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-6 sm:mb-10">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Clock className="w-3.5 h-3.5 text-amber-700" />
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3">
+            <Clock className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-amber-700" />
             <span>Wanci Pangibadah Pasamuwan</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900">
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900">
             Jadwal Kebaktian Rutin GKJ
           </h2>
         </div>
 
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-2 bg-stone-200/70 p-1.5 rounded-2xl border border-stone-300/50">
+        {/* Filter Tabs with horizontal smooth scrolling on mobile */}
+        <div className="flex items-center gap-1.5 sm:gap-2 bg-stone-200/70 p-1.5 rounded-xl sm:rounded-2xl border border-stone-300/50 overflow-x-auto no-scrollbar max-w-full">
           <button
             onClick={() => setActiveTab("all")}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+            className={`px-3 py-1.5 rounded-lg sm:rounded-xl text-xs font-semibold transition-all shrink-0 ${
               activeTab === "all"
                 ? "bg-white text-stone-900 shadow-xs"
                 : "text-stone-600 hover:text-stone-900"
@@ -189,7 +189,7 @@ export default function ScheduleBento() {
           </button>
           <button
             onClick={() => setActiveTab("minggu")}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+            className={`px-3 py-1.5 rounded-lg sm:rounded-xl text-xs font-semibold transition-all shrink-0 ${
               activeTab === "minggu"
                 ? "bg-white text-stone-900 shadow-xs"
                 : "text-stone-600 hover:text-stone-900"
@@ -199,17 +199,17 @@ export default function ScheduleBento() {
           </button>
           <button
             onClick={() => setActiveTab("youth_kids")}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+            className={`px-3 py-1.5 rounded-lg sm:rounded-xl text-xs font-semibold transition-all shrink-0 ${
               activeTab === "youth_kids"
                 ? "bg-white text-stone-900 shadow-xs"
                 : "text-stone-600 hover:text-stone-900"
             }`}
           >
-            Komisi Pemuda & Anak
+            Pemuda & Anak
           </button>
           <button
             onClick={() => setActiveTab("doa")}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+            className={`px-3 py-1.5 rounded-lg sm:rounded-xl text-xs font-semibold transition-all shrink-0 ${
               activeTab === "doa"
                 ? "bg-white text-stone-900 shadow-xs"
                 : "text-stone-600 hover:text-stone-900"
@@ -221,62 +221,62 @@ export default function ScheduleBento() {
       </div>
 
       {/* Bento Grid for Schedules */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
         {filtered.map((item) => (
           <div
             key={item.id}
-            className="bento-card p-6 sm:p-7 flex flex-col justify-between bg-white border border-stone-200/80 group hover:border-amber-700/30 transition-all duration-300"
+            className="bento-card p-4 sm:p-6 md:p-7 flex flex-col justify-between bg-white border border-stone-200/80 group hover:border-amber-700/30 transition-all duration-300"
           >
             <div>
               {/* Card Header Badges */}
-              <div className="flex items-center justify-between gap-2 mb-4">
-                <span className="text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-50 border border-amber-200/60 px-2.5 py-1 rounded-lg">
+              <div className="flex items-center justify-between gap-2 mb-3 sm:mb-4">
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-800 bg-amber-50 border border-amber-200/60 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg">
                   {item.day}
                 </span>
-                <span className="text-[11px] font-semibold text-stone-500 bg-stone-100 px-2.5 py-0.5 rounded-md">
+                <span className="text-[10px] sm:text-[11px] font-semibold text-stone-500 bg-stone-100 px-2 sm:px-2.5 py-0.5 rounded-md">
                   {item.badge}
                 </span>
               </div>
 
               {/* Title & Time */}
-              <h3 className="font-serif text-xl font-bold text-stone-900 mb-2 group-hover:text-amber-800 transition-colors">
+              <h3 className="font-serif text-base sm:text-xl font-bold text-stone-900 mb-1.5 sm:mb-2 group-hover:text-amber-800 transition-colors">
                 {item.title}
               </h3>
 
-              <div className="flex items-center gap-2 text-stone-900 font-mono font-bold text-lg mb-3">
-                <Clock className="w-4 h-4 text-amber-700" />
+              <div className="flex items-center gap-1.5 sm:gap-2 text-stone-900 font-mono font-bold text-base sm:text-lg mb-2.5 sm:mb-3">
+                <Clock className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-amber-700" />
                 <span>{item.time}</span>
               </div>
 
               {/* Location & Audience */}
-              <div className="space-y-1.5 mb-4 text-xs text-stone-600">
-                <div className="flex items-center gap-2">
-                  <MapPin className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+              <div className="space-y-1 mb-3 sm:mb-4 text-[11px] sm:text-xs text-stone-600">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <MapPin className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-stone-400 shrink-0" />
                   <span>{item.location}</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Users className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <Users className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-stone-400 shrink-0" />
                   <span>{item.target}</span>
                 </div>
               </div>
 
               {/* Description */}
-              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mb-4 sm:mb-6">
                 {item.description}
               </p>
             </div>
 
             {/* Actions */}
-            <div className="pt-4 border-t border-stone-100 flex items-center justify-between gap-2">
+            <div className="pt-3 sm:pt-4 border-t border-stone-100 flex items-center justify-between gap-2">
               <a
                 href={generateGoogleCalendarUrl(item)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-stone-100 hover:bg-amber-100/70 hover:text-amber-900 text-stone-700 text-xs font-semibold transition-colors"
+                className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl bg-stone-100 hover:bg-amber-100/70 hover:text-amber-900 text-stone-700 text-[11px] sm:text-xs font-semibold transition-colors"
                 title="Tambahkan ke Google Calendar"
               >
-                <Calendar className="w-3.5 h-3.5 text-amber-700" />
-                <span>+ Google Calendar</span>
+                <Calendar className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-amber-700" />
+                <span>+ Google Cal</span>
               </a>
 
               {item.hasLivestream ? (
@@ -284,7 +284,7 @@ export default function ScheduleBento() {
                   href="https://youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs font-bold text-red-600 hover:text-red-700"
+                  className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-red-600 hover:text-red-700"
                 >
                   <Radio className="w-3 h-3 text-red-600 animate-pulse" />
                   <span>Live Stream</span>
@@ -292,7 +292,7 @@ export default function ScheduleBento() {
               ) : (
                 <a
                   href="#kontak"
-                  className="text-xs font-semibold text-stone-500 hover:text-stone-800 inline-flex items-center gap-0.5"
+                  className="text-[11px] sm:text-xs font-semibold text-stone-500 hover:text-stone-800 inline-flex items-center gap-0.5"
                 >
                   <span>Petunjuk Rute</span>
                   <ChevronRight className="w-3 h-3" />
@@ -304,12 +304,12 @@ export default function ScheduleBento() {
       </div>
 
       {/* Visitor FAQ Quick Banner */}
-      <div className="mt-10 p-6 sm:p-8 rounded-3xl bg-stone-900 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="mt-8 sm:mt-10 p-4 sm:p-7 md:p-8 rounded-2xl sm:rounded-3xl bg-stone-900 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-4 sm:gap-6">
         <div>
-          <div className="text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">
+          <div className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-amber-400 mb-1">
             Panduan Warga rawuh enggal (Tamu Pertama Kali)
           </div>
-          <h4 className="font-serif text-xl sm:text-2xl font-bold mb-2">
+          <h4 className="font-serif text-lg sm:text-2xl font-bold mb-1.5 sm:mb-2">
             Sepisanan Rawuh ing GKJ?
           </h4>
           <p className="text-stone-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
@@ -321,7 +321,7 @@ export default function ScheduleBento() {
           href="https://wa.me/6281226001931?text=Sugeng%20rawuh%20GKJ,%20kula%20badhe%20ndherek%20ngibadah%20sepisanan%20minggu%20punika."
           target="_blank"
           rel="noopener noreferrer"
-          className="shrink-0 px-5 py-3 rounded-2xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs tracking-wide transition-all shadow-sm"
+          className="shrink-0 w-full sm:w-auto text-center px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs tracking-wide transition-all shadow-sm"
         >
           Konfirmasi Kehadiran Tamu
         </a>
