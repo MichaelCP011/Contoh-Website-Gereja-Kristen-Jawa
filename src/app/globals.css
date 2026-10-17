@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f7f4;
+  --foreground: #1c1917;
+}
+
+@theme inline {
+  --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: var(--font-serif), Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Bento Card styles adhering to bento-ui principles */
+.bento-card {
+  background-color: #ffffff;
+  border-radius: 1.75rem; /* 28px consistent curved corner */
+  border: 1px solid rgba(28, 25, 23, 0.08);
+  box-shadow: 0 2px 12px rgba(28, 25, 23, 0.03), 0 1px 3px rgba(28, 25, 23, 0.02);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bento-card:hover {
+  box-shadow: 0 16px 36px -8px rgba(28, 25, 23, 0.08), 0 4px 12px -2px rgba(28, 25, 23, 0.03);
+  border-color: rgba(180, 83, 9, 0.25);
+}
+
+/* Subtle architectural patterns */
+.pattern-dots {
+  background-image: radial-gradient(rgba(28, 25, 23, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f0ec;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a29e;
+}
